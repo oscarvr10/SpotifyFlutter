@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:spotify_flutter/presentation/routes/app_routes.dart';
-import 'package:spotify_flutter/presentation/routes/routes.dart';
 import 'package:spotify_flutter/presentation/theme/app_theme.dart';
 
 class MyApp extends StatelessWidget {
@@ -8,10 +7,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
+      routerConfig: appRouter,
       debugShowCheckedModeBanner: false,
-      initialRoute: Routes.home,
-      routes: appRoutes,
       theme: AppTheme().getTheme(),
     );
   }

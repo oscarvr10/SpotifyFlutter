@@ -1,4 +1,7 @@
+import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:spotify_flutter/presentation/routes/routes.dart';
 
 class CustomBottomNavigationBar extends StatelessWidget {
   final int currentIndex;
@@ -8,19 +11,34 @@ class CustomBottomNavigationBar extends StatelessWidget {
     required this.currentIndex,
   });
 
+  void onTabTapped(BuildContext context, int index) {
+    if (index > 2 || index < 0) {
+      context.go('${Routes.home}/0');
+    } else {
+      context.go('${Routes.home}/$index');
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
-    final colors = Theme.of(context).colorScheme;
-
     return BottomNavigationBar(
       elevation: 0.0,
-      selectedItemColor: colors.primary,
+      selectedItemColor: Colors.white,
       currentIndex: currentIndex,
+      onTap: (index) => onTabTapped(context, index),
       items: const [
-        BottomNavigationBarItem(icon: Icon(Icons.home_outlined), label: 'Home'),
-        BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Search'),
         BottomNavigationBarItem(
-            icon: Icon(Icons.library_add_outlined), label: 'My Library'),
+            icon: Icon(FluentIcons.home_48_regular),
+            activeIcon: Icon(FluentIcons.home_48_filled),
+            label: 'Home'),
+        BottomNavigationBarItem(
+            icon: Icon(FluentIcons.search_48_regular),
+            activeIcon: Icon(FluentIcons.search_48_filled),
+            label: 'Search'),
+        BottomNavigationBarItem(
+            icon: Icon(FluentIcons.library_28_regular),
+            activeIcon: Icon(FluentIcons.library_28_filled),
+            label: 'Your Library'),
       ],
     );
   }
