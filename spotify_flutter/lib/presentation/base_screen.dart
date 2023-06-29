@@ -53,6 +53,7 @@ class _BaseScreenState extends State<BaseScreen>
         controller: pageController,
         children: viewRoutes,
       ),
+      backgroundColor: const Color.fromRGBO(18, 18, 18, 1.0),
       bottomNavigationBar:
           CustomBottomNavigationBar(currentIndex: widget.pageIndex),
     );

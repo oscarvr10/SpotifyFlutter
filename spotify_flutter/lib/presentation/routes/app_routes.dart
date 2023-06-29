@@ -2,12 +2,6 @@ import 'package:go_router/go_router.dart';
 import 'package:spotify_flutter/presentation/base_screen.dart';
 import 'package:spotify_flutter/presentation/routes/routes.dart';
 
-// Map<String, Widget Function(BuildContext)> get appRoutes {
-//   return {
-//     Routes.home: (context) => const BaseScreen(),
-//   };
-// }
-
 final appRouter = GoRouter(
   initialLocation: '${Routes.home}/0',
   routes: [
