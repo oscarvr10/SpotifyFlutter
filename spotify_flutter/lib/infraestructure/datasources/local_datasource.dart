@@ -22,7 +22,7 @@ class LocalDataSource implements MockDataSource {
   @override
   Future<List<Artist>> getArtists() async {
     await Future.delayed(const Duration(seconds: 2));
-    final List<Artist> newArtists = albums
+    final List<Artist> newArtists = artists
         .map((artist) => LocalArtistModel.fromJson(artist).toArtistEntity())
         .toList();
 

@@ -10,9 +10,9 @@ import 'package:spotify_flutter/domain/repositories/mock_repository.dart';
 class MockRepositoryImpl implements MockRepository {
   final MockDataSource dataSource;
 
-  MockRepositoryImpl({
-    required this.dataSource,
-  });
+  MockRepositoryImpl(
+    this.dataSource,
+  );
 
   @override
   Future<List<Album>> getAlbums() {
