@@ -1,3 +1,4 @@
+import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:spotify_flutter/presentation/providers/mock_providers.dart';
 import 'package:spotify_flutter/presentation/widgets/home/playlist_list_view.dart';
@@ -32,10 +33,23 @@ class HomeScreenState extends ConsumerState<HomeScreen>
     final playlists = ref.watch(playlistProvider);
     final albums = ref.watch(recommendationsProvider);
     final artists = ref.watch(artistsProvider);
+    final size = MediaQuery.of(context).size;
+    final fontStyle = Theme.of(context).textTheme;
+
+    final actions = <Widget>[
+      const Icon(FluentIcons.alert_20_regular, size: 28.0),
+      SizedBox(width: size.width * 0.055),
+      const Icon(FluentIcons.history_20_regular, size: 28.0),
+      SizedBox(width: size.width * 0.055),
+      const Icon(FluentIcons.settings_20_regular, size: 28.0)
+    ];
 
     return CustomScrollView(
       slivers: [
-        const CustomAppBar(),
+        CustomAppBar(
+          actions: actions,
+          child: categories(fontStyle),
+        ),
         SliverList(
           delegate: SliverChildBuilderDelegate(
             (context, index) {
@@ -62,6 +76,36 @@ class HomeScreenState extends ConsumerState<HomeScreen>
           ),
         )
       ],
+    );
+  }
+
+  Widget categories(TextTheme fontStyle) {
+    return Container(
+      color: const Color.fromRGBO(18, 18, 18, 1.0),
+      padding: const EdgeInsets.only(left: 12.0),
+      child: Row(
+        children: [
+          Chip(
+            label: const Text('Music'),
+            labelStyle: fontStyle.labelSmall!.copyWith(color: Colors.white),
+            backgroundColor: const Color.fromRGBO(42, 42, 42, 1.0),
+            surfaceTintColor: const Color.fromRGBO(42, 42, 42, 1.0),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20),
+            ),
+          ),
+          const SizedBox(width: 12.0),
+          Chip(
+            label: const Text('Podcasts & Shows'),
+            labelStyle: fontStyle.labelSmall!.copyWith(color: Colors.white),
+            backgroundColor: const Color.fromRGBO(42, 42, 42, 1.0),
+            surfaceTintColor: const Color.fromRGBO(42, 42, 42, 1.0),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20),
+            ),
+          ),
+        ],
+      ),
     );
   }
 
