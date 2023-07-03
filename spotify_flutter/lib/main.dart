@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:spotify_flutter/presentation/my_app.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:spotify_flutter/presentation/main_app.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    const ProviderScope(child: MainApp()),
+  );
 }
