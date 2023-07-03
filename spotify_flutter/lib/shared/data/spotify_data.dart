@@ -18,14 +18,14 @@ List<Map<String, dynamic>> playlists = [
     'followers': 13478,
     'editor': 'Spotify',
     'imageUrl':
-        'https://i.scdn.co/image/83253e20ef94bf4bb896d72a58c85c4b7cb9ce62',
+        'https://i.scdn.co/image/a9cdead5cf5d85a33e7bc12b49d1006821650ca4',
   },
   {
     'name': 'Peaceful Indie Ambient',
     'followers': 4872,
     'editor': 'Spotify',
     'imageUrl':
-        'https://i.scdn.co/image/67c7e274072d3a4eef1fd1e95622b0a30f0285a3',
+        'https://i.scdn.co/image/ab67706f0000000327dcfdec3f183103d00263f1',
   },
   {
     'name': 'This Is: Muse',
@@ -39,7 +39,7 @@ List<Map<String, dynamic>> playlists = [
     'followers': 7447,
     'editor': 'Spotify',
     'imageUrl':
-        'https://www.geek.com/wp-content/uploads/2015/11/dirty-dubstep-dangle.jpeg',
+        'https://seeded-session-images.scdn.co/v1/img/artist/0HlxL5hisLf59ETEPM3cUA/en',
   },
 ];
 
@@ -55,6 +55,12 @@ List<Map<String, dynamic>> albums = [
     'name': 'Royal Blood',
     'imageUrl':
         'https://upload.wikimedia.org/wikipedia/en/b/b0/Royal_Blood_-_Royal_Blood_%28Artwork%29.jpg',
+  },
+  {
+    'artist': 'Coldplay',
+    'name': 'Music Of The Spheres',
+    'imageUrl':
+        'https://i.scdn.co/image/ab67616d0000b273ec10f247b100da1ce0d80b6d',
   },
   {
     'artist': 'System Of A Down',
@@ -135,9 +141,9 @@ List<Map<String, dynamic>> recents = [
         'https://i.scdn.co/image/ab67706f000000029956e277ef723dffb90a19ec',
   },
   {
-    'description': 'The Weeknd',
+    'description': 'Martin Garrix, Zedd',
     'imageUrl':
-        'https://i.scdn.co/image/ab67616d000048514ab2520c2c77a1d66b9ee21d',
+        'https://res.cloudinary.com/jgarden/image/upload/v1670527646/Spotify%20UI/Album%20Arts/daq5oivttpp2mx76mhm4.jpg',
   },
   {
     'description': 'Random Access Memories',
@@ -165,7 +171,12 @@ List<Map<String, dynamic>> artists = [
   {
     'name': 'Royal Blood',
     'imageUrl':
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxhKmcz7n60OYILafTuVWtbfgESW-k7g0l3tHyfY6fLzF19rMFtg',
+        'https://i.scdn.co/image/ab67616100005174e8b65188fe197abd30703ae2',
+  },
+  {
+    'name': 'Coldplay',
+    'imageUrl':
+        'https://i.scdn.co/image/ab6761610000e5eb989ed05e1f0570cc4726c2d3',
   },
   {
     'name': 'The Beatles',
@@ -175,17 +186,12 @@ List<Map<String, dynamic>> artists = [
   {
     'name': 'Daft Punk',
     'imageUrl':
-        'http://www.popscoop.org/wp-content/uploads/2015/12/Beatles.jpg-392x300.jpg',
-  },
-  {
-    'name': 'The Weeknd',
-    'imageUrl':
-        'http://www.planocritico.com/wp-content/uploads/2015/09/the-weeknd-bbtm-600x400.jpg',
+        'https://dice-i-scdn-co.imgix.net/image/ab6761610000e5ebca77d763703a93930c363a39',
   },
   {
     'name': 'Muse',
     'imageUrl':
-        'https://pl.scdn.co/images/pl/default/c44c0da53b03b18dd3fdaf91a7cb297e96e96491',
+        'https://i.scdn.co/image/ab6761610000e5eb0accbbe13e1aa147dd27671c',
   },
 ];
 

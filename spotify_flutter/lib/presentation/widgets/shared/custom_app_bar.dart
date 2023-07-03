@@ -10,21 +10,21 @@ class CustomAppBar extends StatelessWidget {
     final fontStyle = Theme.of(context).textTheme;
 
     return SliverAppBar(
-      elevation: 0,
+      foregroundColor: Colors.white,
+      backgroundColor: Colors.black,
       centerTitle: false,
       pinned: true,
       floating: true,
-      snap: true,
-      title: Padding(
-        padding: const EdgeInsets.only(left: 12.0),
-        child: Text(
-          'Good Evening',
-          overflow: TextOverflow.ellipsis,
-          style: TextStyle(
-            fontWeight: FontWeight.w700,
-            fontSize: fontStyle.titleLarge!.fontSize,
-            color: Colors.white,
-          ),
+      expandedHeight: 110,
+      collapsedHeight: 48,
+      toolbarHeight: 48,
+      title: Text(
+        'Good Evening',
+        overflow: TextOverflow.ellipsis,
+        style: TextStyle(
+          fontWeight: FontWeight.w700,
+          fontSize: fontStyle.titleLarge!.fontSize,
+          color: Colors.white,
         ),
       ),
       flexibleSpace: FlexibleSpaceBar(
@@ -47,57 +47,41 @@ class CustomAppBar extends StatelessWidget {
         ),
       ),
       bottom: PreferredSize(
-        preferredSize: Size(size.width, size.height * 0.1),
+        preferredSize: Size(size.width, 0),
         child: Container(
           color: const Color.fromRGBO(18, 18, 18, 1.0),
-          padding: const EdgeInsets.only(bottom: 32.0, left: 6.0),
-          child: Expanded(
-            child: Row(
-              children: [
-                const SizedBox(width: 12.0),
-                Chip(
-                  label: const Text('Music'),
-                  labelStyle: const TextStyle(color: Colors.white),
-                  backgroundColor: const Color.fromRGBO(42, 42, 42, 1.0),
-                  surfaceTintColor: const Color.fromRGBO(42, 42, 42, 1.0),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20),
-                  ),
+          padding: const EdgeInsets.only(left: 12.0),
+          child: Row(
+            children: [
+              Chip(
+                label: const Text('Music'),
+                labelStyle: fontStyle.labelSmall!.copyWith(color: Colors.white),
+                backgroundColor: const Color.fromRGBO(42, 42, 42, 1.0),
+                surfaceTintColor: const Color.fromRGBO(42, 42, 42, 1.0),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20),
                 ),
-                const SizedBox(width: 12.0),
-                Chip(
-                  label: const Text('Podcasts & Shows'),
-                  labelStyle: const TextStyle(color: Colors.white),
-                  backgroundColor: const Color.fromRGBO(42, 42, 42, 1.0),
-                  surfaceTintColor: const Color.fromRGBO(42, 42, 42, 1.0),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20),
-                  ),
+              ),
+              const SizedBox(width: 12.0),
+              Chip(
+                label: const Text('Podcasts & Shows'),
+                labelStyle: fontStyle.labelSmall!.copyWith(color: Colors.white),
+                backgroundColor: const Color.fromRGBO(42, 42, 42, 1.0),
+                surfaceTintColor: const Color.fromRGBO(42, 42, 42, 1.0),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),
       actions: [
-        const Icon(
-          FluentIcons.alert_20_regular,
-          size: 32.0,
-        ),
-        SizedBox(
-          width: size.width * 0.055,
-        ),
-        const Icon(
-          FluentIcons.history_20_regular,
-          size: 32.0,
-        ),
-        SizedBox(
-          width: size.width * 0.055,
-        ),
-        const Icon(
-          FluentIcons.settings_20_regular,
-          size: 32.0,
-        )
+        const Icon(FluentIcons.alert_20_regular, size: 28.0),
+        SizedBox(width: size.width * 0.055),
+        const Icon(FluentIcons.history_20_regular, size: 28.0),
+        SizedBox(width: size.width * 0.055),
+        const Icon(FluentIcons.settings_20_regular, size: 28.0)
       ],
     );
   }
