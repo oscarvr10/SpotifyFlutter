@@ -3,11 +3,15 @@ import 'package:flutter/material.dart';
 class CustomAppBar extends StatelessWidget {
   final List<Widget> actions;
   final Widget child;
+  final String appBarTitle;
+  final double appBarHeight;
 
   const CustomAppBar({
     super.key,
     required this.actions,
     required this.child,
+    required this.appBarTitle,
+    this.appBarHeight = 110,
   });
 
   @override
@@ -21,11 +25,11 @@ class CustomAppBar extends StatelessWidget {
         centerTitle: false,
         pinned: true,
         floating: true,
-        expandedHeight: 110,
+        expandedHeight: appBarHeight,
         collapsedHeight: 48,
         toolbarHeight: 48,
         title: Text(
-          'Good Evening',
+          appBarTitle,
           overflow: TextOverflow.ellipsis,
           style: TextStyle(
             fontWeight: FontWeight.w700,
