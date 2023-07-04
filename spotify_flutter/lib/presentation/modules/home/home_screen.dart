@@ -34,7 +34,6 @@ class HomeScreenState extends ConsumerState<HomeScreen>
     final albums = ref.watch(recommendationsProvider);
     final artists = ref.watch(artistsProvider);
     final size = MediaQuery.of(context).size;
-    final fontStyle = Theme.of(context).textTheme;
 
     final actions = <Widget>[
       const Icon(FluentIcons.alert_20_regular, size: 28.0),
@@ -50,7 +49,7 @@ class HomeScreenState extends ConsumerState<HomeScreen>
         CustomAppBar(
           actions: actions,
           appBarTitle: 'Good Evening',
-          child: categories(fontStyle),
+          child: categories(),
         ),
         SliverList(
           delegate: SliverChildBuilderDelegate(
@@ -70,7 +69,10 @@ class HomeScreenState extends ConsumerState<HomeScreen>
                     recommendations: albums,
                   ),
                   PopularArtistsListView(
-                      headerText: 'Popular Artists', artists: artists)
+                      headerText: 'Popular Artists', artists: artists),
+                  const SizedBox(
+                    height: 70,
+                  ),
                 ],
               );
             },
@@ -81,14 +83,19 @@ class HomeScreenState extends ConsumerState<HomeScreen>
     );
   }
 
-  Widget categories(TextTheme fontStyle) {
+  Widget categories() {
+    final fontStyle = Theme.of(context).textTheme;
+
     return Container(
       color: const Color.fromRGBO(18, 18, 18, 1.0),
       padding: const EdgeInsets.symmetric(horizontal: 12.0),
       child: Row(
         children: [
           Chip(
-            label: const Text('Music'),
+            label: Text(
+              'Music',
+              style: fontStyle.labelMedium!.copyWith(letterSpacing: 0),
+            ),
             labelStyle: fontStyle.labelSmall!.copyWith(color: Colors.white),
             backgroundColor: const Color.fromRGBO(42, 42, 42, 1.0),
             surfaceTintColor: const Color.fromRGBO(42, 42, 42, 1.0),
@@ -98,7 +105,10 @@ class HomeScreenState extends ConsumerState<HomeScreen>
           ),
           const SizedBox(width: 12.0),
           Chip(
-            label: const Text('Podcasts & Shows'),
+            label: Text(
+              'Podcasts & Shows',
+              style: fontStyle.labelMedium!.copyWith(letterSpacing: 0),
+            ),
             labelStyle: fontStyle.labelSmall!.copyWith(color: Colors.white),
             backgroundColor: const Color.fromRGBO(42, 42, 42, 1.0),
             surfaceTintColor: const Color.fromRGBO(42, 42, 42, 1.0),

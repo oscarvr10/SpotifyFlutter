@@ -63,6 +63,7 @@ class SearchScreenState extends ConsumerState<SearchScreen>
                     ),
                   ),
                   CategoryGridView(categories: categories),
+                  const SizedBox(height: 70),
                 ],
               );
             },

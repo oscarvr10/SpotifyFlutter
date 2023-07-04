@@ -38,7 +38,6 @@ class _BaseScreenState extends State<BaseScreen>
   @override
   Widget build(BuildContext context) {
     super.build(context);
-
     if (pageController.hasClients) {
       pageController.animateToPage(
         widget.pageIndex,
@@ -47,15 +46,31 @@ class _BaseScreenState extends State<BaseScreen>
       );
     }
 
+    // return Scaffold(
+    //   body: PageView(
+    //     physics: const NeverScrollableScrollPhysics(),
+    //     controller: pageController,
+    //     children: viewRoutes,
+    //   ),
+    //   backgroundColor: const Color.fromRGBO(18, 18, 18, 1.0),
+    //   bottomNavigationBar:
+    //       CustomBottomNavigationBar(currentIndex: widget.pageIndex),
+    // );
     return Scaffold(
-      body: PageView(
-        physics: const NeverScrollableScrollPhysics(),
-        controller: pageController,
-        children: viewRoutes,
+      body: Container(
+        padding: const EdgeInsets.only(top: 24.0),
+        child: Stack(
+          children: [
+            PageView(
+              physics: const NeverScrollableScrollPhysics(),
+              controller: pageController,
+              children: viewRoutes,
+            ),
+            CustomBottomNavigationBar(currentIndex: widget.pageIndex),
+          ],
+        ),
       ),
       backgroundColor: const Color.fromRGBO(18, 18, 18, 1.0),
-      bottomNavigationBar:
-          CustomBottomNavigationBar(currentIndex: widget.pageIndex),
     );
   }
 
