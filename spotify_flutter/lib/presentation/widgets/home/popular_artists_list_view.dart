@@ -18,7 +18,7 @@ class PopularArtistsListView extends StatelessWidget {
 
     return Container(
       padding: const EdgeInsets.only(left: 12.0),
-      height: 240,
+      height: 250,
       width: double.infinity,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -29,7 +29,7 @@ class PopularArtistsListView extends StatelessWidget {
             style: titleStyle.copyWith(
                 fontWeight: FontWeight.w700, color: Colors.white),
           ),
-          const SizedBox(height: 28),
+          const SizedBox(height: 24),
           Expanded(
             child: ListView.builder(
               itemCount: artists.length,

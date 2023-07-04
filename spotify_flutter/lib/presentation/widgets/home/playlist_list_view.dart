@@ -17,7 +17,7 @@ class PlaylistListView extends StatelessWidget {
     final titleStyle = Theme.of(context).textTheme.titleLarge!;
 
     return Container(
-      padding: const EdgeInsets.only(left: 12.0, top: 12.0),
+      padding: const EdgeInsets.only(left: 12.0),
       height: 280,
       width: double.infinity,
       child: Column(

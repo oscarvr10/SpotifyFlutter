@@ -39,38 +39,38 @@ class RecentListView extends StatelessWidget {
   Widget _recentItem(Recent recent, TextStyle textStyle) {
     return Container(
       padding: const EdgeInsets.all(4.0),
-      child: GestureDetector(
-        onTap: () => print('Tap on ${recent.description}'),
-        child: Container(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(6.0),
-            color: Colors.grey[900],
-          ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              ClipRRect(
-                borderRadius:
-                    const BorderRadius.horizontal(left: Radius.circular(6.0)),
-                child: Image.network(
-                  recent.imageUrl,
-                  width: 60,
-                  height: 60,
-                ),
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(6.0),
+          color: Colors.grey[900],
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            ClipRRect(
+              borderRadius:
+                  const BorderRadius.horizontal(left: Radius.circular(6.0)),
+              child: Image.network(
+                recent.imageUrl,
+                width: 60,
+                height: 60,
               ),
-              Expanded(
-                child: Container(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text(
-                    recent.description,
-                    maxLines: 2,
-                    style: textStyle.copyWith(
-                        fontWeight: FontWeight.w700, color: Colors.white),
+            ),
+            Expanded(
+              child: Container(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  recent.description,
+                  maxLines: 2,
+                  style: textStyle.copyWith(
+                    fontWeight: FontWeight.w700,
+                    color: Colors.white,
+                    letterSpacing: 0,
                   ),
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

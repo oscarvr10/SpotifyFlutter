@@ -1,6 +1,6 @@
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
-import 'package:spotify_flutter/presentation/providers/mock_providers.dart';
+import 'package:spotify_flutter/presentation/providers/home/home_providers.dart';
 import 'package:spotify_flutter/presentation/widgets/home/playlist_list_view.dart';
 import 'package:spotify_flutter/presentation/widgets/home/popular_artists_list_view.dart';
 import 'package:spotify_flutter/presentation/widgets/home/recommendations_list_view.dart';
@@ -41,13 +41,15 @@ class HomeScreenState extends ConsumerState<HomeScreen>
       SizedBox(width: size.width * 0.055),
       const Icon(FluentIcons.history_20_regular, size: 28.0),
       SizedBox(width: size.width * 0.055),
-      const Icon(FluentIcons.settings_20_regular, size: 28.0)
+      const Icon(FluentIcons.settings_20_regular, size: 28.0),
+      const SizedBox(width: 12.0),
     ];
 
     return CustomScrollView(
       slivers: [
         CustomAppBar(
           actions: actions,
+          appBarTitle: 'Good Evening',
           child: categories(fontStyle),
         ),
         SliverList(
@@ -82,7 +84,7 @@ class HomeScreenState extends ConsumerState<HomeScreen>
   Widget categories(TextTheme fontStyle) {
     return Container(
       color: const Color.fromRGBO(18, 18, 18, 1.0),
-      padding: const EdgeInsets.only(left: 12.0),
+      padding: const EdgeInsets.symmetric(horizontal: 12.0),
       child: Row(
         children: [
           Chip(

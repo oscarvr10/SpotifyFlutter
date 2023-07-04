@@ -34,7 +34,10 @@ class CoverImage extends StatelessWidget {
                 padding: const EdgeInsets.only(top: 8.0),
                 child: Text(
                   title!,
-                  style: bodyTheme.bodySmall!.copyWith(color: Colors.white),
+                  style: bodyTheme.bodySmall!.copyWith(
+                    color: Colors.white,
+                    fontWeight: FontWeight.w500,
+                  ),
                   maxLines: 2,
                 ),
               ),

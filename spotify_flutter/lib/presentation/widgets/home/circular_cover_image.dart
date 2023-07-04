@@ -30,7 +30,10 @@ class CircularCoverImage extends StatelessWidget {
             if (title != null)
               Text(
                 title!,
-                style: bodyTheme.bodySmall!.copyWith(color: Colors.white),
+                style: bodyTheme.bodySmall!.copyWith(
+                  color: Colors.white,
+                  fontWeight: FontWeight.w500,
+                ),
                 maxLines: 1,
               ),
             if (description != null)

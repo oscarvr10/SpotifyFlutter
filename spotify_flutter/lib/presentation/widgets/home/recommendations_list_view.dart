@@ -18,12 +18,11 @@ class RecommendationsListView extends StatelessWidget {
 
     return Container(
       padding: const EdgeInsets.only(left: 12.0),
-      height: 280,
+      height: 270,
       width: double.infinity,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const SizedBox(height: 12),
           Text(
             headerText,
             textAlign: TextAlign.right,
