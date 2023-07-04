@@ -54,15 +54,15 @@ class CustomBottomNavigationBar extends StatelessWidget {
           curve: Curves.easeIn,
           duration: const Duration(milliseconds: 400),
           height: size.height * 0.12,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             gradient: LinearGradient(
               colors: [
-                Colors.black.withOpacity(0.0),
-                Colors.black.withOpacity(0.8),
+                Color.fromRGBO(18, 18, 18, 0.8),
+                Color.fromRGBO(18, 18, 18, 1.0),
               ],
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
-              stops: const [0.0, 0.4],
+              stops: [0.0, 0.6],
             ),
           ),
           child: Theme(

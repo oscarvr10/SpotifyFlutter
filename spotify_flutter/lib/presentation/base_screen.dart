@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:spotify_flutter/presentation/modules/home/home_screen.dart';
 import 'package:spotify_flutter/presentation/modules/library/my_library_screen.dart';
 import 'package:spotify_flutter/presentation/modules/search/search_screen.dart';
@@ -45,6 +46,14 @@ class _BaseScreenState extends State<BaseScreen>
         duration: const Duration(milliseconds: 250),
       );
     }
+
+    SystemChrome.setSystemUIOverlayStyle(
+      const SystemUiOverlayStyle(
+          statusBarColor: Colors.white,
+          statusBarBrightness:
+              Brightness.dark //or set color with: Color(0xFF0000FF)
+          ),
+    );
 
     // return Scaffold(
     //   body: PageView(
