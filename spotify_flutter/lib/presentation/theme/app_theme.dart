@@ -5,6 +5,6 @@ class AppTheme {
         useMaterial3: false,
         colorSchemeSeed: Colors.white,
         brightness: Brightness.dark,
-        fontFamily: 'Circular',
+        // fontFamily: 'Circular',
       );
 }

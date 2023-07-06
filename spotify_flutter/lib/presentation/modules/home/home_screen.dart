@@ -1,12 +1,10 @@
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:spotify_flutter/presentation/providers/home/home_providers.dart';
-import 'package:spotify_flutter/presentation/widgets/home/playlist_list_view.dart';
-import 'package:spotify_flutter/presentation/widgets/home/popular_artists_list_view.dart';
-import 'package:spotify_flutter/presentation/widgets/home/recommendations_list_view.dart';
+import 'package:spotify_flutter/presentation/widgets/home/home.dart';
 import 'package:spotify_flutter/presentation/widgets/shared/custom_app_bar.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:spotify_flutter/presentation/widgets/home/recent_list_view.dart';
+import 'package:spotify_flutter/presentation/widgets/shared/custom_chip.dart';
 
 class HomeScreen extends ConsumerStatefulWidget {
   const HomeScreen({super.key});
@@ -48,13 +46,13 @@ class HomeScreenState extends ConsumerState<HomeScreen>
       slivers: [
         CustomAppBar(
           actions: actions,
-          appBarTitle: 'Good Evening',
+          appBarTitle: 'Good Morning',
           child: categories(),
         ),
         SliverList(
           delegate: SliverChildBuilderDelegate(
             (context, index) {
-              if (recentPlayedList.isEmpty && playlists.isEmpty) {
+              if (artists.isEmpty) {
                 return Container();
               }
               return Column(
@@ -69,10 +67,10 @@ class HomeScreenState extends ConsumerState<HomeScreen>
                     recommendations: albums,
                   ),
                   PopularArtistsListView(
-                      headerText: 'Popular Artists', artists: artists),
-                  const SizedBox(
-                    height: 70,
+                    headerText: 'Popular Artists',
+                    artists: artists,
                   ),
+                  const SizedBox(height: 70),
                 ],
               );
             },
@@ -84,38 +82,14 @@ class HomeScreenState extends ConsumerState<HomeScreen>
   }
 
   Widget categories() {
-    final fontStyle = Theme.of(context).textTheme;
-
     return Container(
       color: const Color.fromRGBO(18, 18, 18, 1.0),
       padding: const EdgeInsets.symmetric(horizontal: 12.0),
-      child: Row(
+      child: const Row(
         children: [
-          Chip(
-            label: Text(
-              'Music',
-              style: fontStyle.labelMedium!.copyWith(letterSpacing: 0),
-            ),
-            labelStyle: fontStyle.labelSmall!.copyWith(color: Colors.white),
-            backgroundColor: const Color.fromRGBO(42, 42, 42, 1.0),
-            surfaceTintColor: const Color.fromRGBO(42, 42, 42, 1.0),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(20),
-            ),
-          ),
-          const SizedBox(width: 12.0),
-          Chip(
-            label: Text(
-              'Podcasts & Shows',
-              style: fontStyle.labelMedium!.copyWith(letterSpacing: 0),
-            ),
-            labelStyle: fontStyle.labelSmall!.copyWith(color: Colors.white),
-            backgroundColor: const Color.fromRGBO(42, 42, 42, 1.0),
-            surfaceTintColor: const Color.fromRGBO(42, 42, 42, 1.0),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(20),
-            ),
-          ),
+          CustomChip(text: 'Music'),
+          SizedBox(width: 12.0),
+          CustomChip(text: 'Podcasts & Shows'),
         ],
       ),
     );

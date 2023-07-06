@@ -1,7 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:spotify_flutter/domain/entities/entities.dart';
-
-import '../mock_data_provider.dart';
+import 'package:spotify_flutter/presentation/providers/mock_data_provider.dart';
 
 final recentPlayedProvider =
     StateNotifierProvider<MockRecentNotifier, List<Recent>>((ref) {
