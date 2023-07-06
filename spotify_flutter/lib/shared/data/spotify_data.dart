@@ -41,6 +41,34 @@ List<Map<String, dynamic>> playlists = [
     'imageUrl':
         'https://seeded-session-images.scdn.co/v1/img/artist/0HlxL5hisLf59ETEPM3cUA/en'
   },
+  {
+    'name': 'Rap Caviar',
+    'followers': 7447,
+    'editor': 'Spotify',
+    'imageUrl':
+        'https://memberdata.s3.amazonaws.com/hi/hitsdd/photos/hitsdd_photo_gal__photo_1157618841.png'
+  },
+  {
+    'name': 'Hot Country',
+    'followers': 7447,
+    'editor': 'Spotify',
+    'imageUrl':
+        'https://i.scdn.co/image/ab67706c0000da8468b309875a0ca062287be7e8'
+  },
+  {
+    'name': 'Electro Now',
+    'followers': 7447,
+    'editor': 'Spotify',
+    'imageUrl':
+        'https://i.scdn.co/image/ab67706c0000da84e1e9372f23baeb5486e4776e'
+  },
+  {
+    'name': 'Today\'s Top Hits',
+    'followers': 7447,
+    'editor': 'Spotify',
+    'imageUrl':
+        'https://i.scdn.co/image/ab67706c0000da84b3e93a0ed97e00eb05ff5eb5'
+  }
 ];
 
 List<Map<String, dynamic>> albums = [

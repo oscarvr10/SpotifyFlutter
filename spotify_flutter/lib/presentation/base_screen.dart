@@ -3,7 +3,8 @@ import 'package:flutter/services.dart';
 import 'package:spotify_flutter/presentation/modules/home/home_screen.dart';
 import 'package:spotify_flutter/presentation/modules/library/my_library_screen.dart';
 import 'package:spotify_flutter/presentation/modules/search/search_screen.dart';
-import 'package:spotify_flutter/presentation/widgets/shared/custom_bottom_navbar.dart';
+
+import 'widgets/shared/shared.dart';
 
 class BaseScreen extends StatefulWidget {
   final int pageIndex;
@@ -55,19 +56,9 @@ class _BaseScreenState extends State<BaseScreen>
           ),
     );
 
-    // return Scaffold(
-    //   body: PageView(
-    //     physics: const NeverScrollableScrollPhysics(),
-    //     controller: pageController,
-    //     children: viewRoutes,
-    //   ),
-    //   backgroundColor: const Color.fromRGBO(18, 18, 18, 1.0),
-    //   bottomNavigationBar:
-    //       CustomBottomNavigationBar(currentIndex: widget.pageIndex),
-    // );
     return Scaffold(
       body: Container(
-        padding: const EdgeInsets.only(top: 24.0),
+        padding: const EdgeInsets.only(top: 26.0),
         child: Stack(
           children: [
             PageView(
@@ -75,6 +66,7 @@ class _BaseScreenState extends State<BaseScreen>
               controller: pageController,
               children: viewRoutes,
             ),
+            const PlayerControl(),
             CustomBottomNavigationBar(currentIndex: widget.pageIndex),
           ],
         ),
