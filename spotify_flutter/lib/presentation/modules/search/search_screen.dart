@@ -36,6 +36,7 @@ class SearchScreenState extends ConsumerState<SearchScreen>
         CustomAppBar(
           actions: actions,
           appBarTitle: 'Search',
+          appBarHeight: 135,
           child: Container(
             padding: const EdgeInsets.only(left: 14.0, right: 14.0),
             child: const CustomSearchBar(),

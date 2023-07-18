@@ -28,32 +28,35 @@ class CustomAppBar extends StatelessWidget {
       pinned: true,
       floating: true,
       expandedHeight: appBarHeight,
-      collapsedHeight: 48,
-      toolbarHeight: 48,
-      title: Row(
-        children: [
-          if (showAvatar)
-            CircleAvatar(
-              radius: 16,
-              backgroundColor: Colors.blue.shade400,
-              child: const Text(
-                'O',
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 18,
+      collapsedHeight: appBarHeight / 2.1,
+      toolbarHeight: appBarHeight / 2.1,
+      title: Container(
+        padding: const EdgeInsets.only(top: 36.0),
+        child: Row(
+          children: [
+            if (showAvatar)
+              CircleAvatar(
+                radius: 16,
+                backgroundColor: Colors.blue.shade400,
+                child: const Text(
+                  'O',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 18,
+                  ),
                 ),
               ),
+            if (showAvatar) const SizedBox(width: 8),
+            Text(
+              appBarTitle,
+              overflow: TextOverflow.ellipsis,
+              style: fontStyle.headlineSmall!.copyWith(
+                  fontWeight: FontWeight.w700,
+                  color: Colors.white,
+                  letterSpacing: -1.0),
             ),
-          if (showAvatar) const SizedBox(width: 8),
-          Text(
-            appBarTitle,
-            overflow: TextOverflow.ellipsis,
-            style: fontStyle.headlineSmall!.copyWith(
-                fontWeight: FontWeight.w700,
-                color: Colors.white,
-                letterSpacing: -1.0),
-          ),
-        ],
+          ],
+        ),
       ),
       flexibleSpace: FlexibleSpaceBar(
         title: Container(
@@ -78,7 +81,12 @@ class CustomAppBar extends StatelessWidget {
         preferredSize: Size(size.width, 0),
         child: child,
       ),
-      actions: actions,
+      actions: [
+        Container(
+          padding: const EdgeInsets.only(top: 36.0),
+          child: Row(children: actions),
+        )
+      ],
     );
   }
 }

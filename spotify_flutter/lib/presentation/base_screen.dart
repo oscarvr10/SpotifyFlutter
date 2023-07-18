@@ -57,19 +57,16 @@ class _BaseScreenState extends State<BaseScreen>
     );
 
     return Scaffold(
-      body: Container(
-        padding: const EdgeInsets.only(top: 26.0),
-        child: Stack(
-          children: [
-            PageView(
-              physics: const NeverScrollableScrollPhysics(),
-              controller: pageController,
-              children: viewRoutes,
-            ),
-            const PlayerControl(),
-            CustomBottomNavigationBar(currentIndex: widget.pageIndex),
-          ],
-        ),
+      body: Stack(
+        children: [
+          PageView(
+            physics: const NeverScrollableScrollPhysics(),
+            controller: pageController,
+            children: viewRoutes,
+          ),
+          const PlayerControl(),
+          CustomBottomNavigationBar(currentIndex: widget.pageIndex),
+        ],
       ),
       backgroundColor: const Color.fromRGBO(18, 18, 18, 1.0),
     );

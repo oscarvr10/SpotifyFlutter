@@ -41,6 +41,7 @@ class MyLibraryScreenState extends ConsumerState<MyLibraryScreen>
             actions: actions,
             appBarTitle: 'Your Library',
             showAvatar: true,
+            appBarHeight: 135,
             child: categories(),
           ),
           SliverList(

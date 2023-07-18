@@ -47,6 +47,7 @@ class HomeScreenState extends ConsumerState<HomeScreen>
         CustomAppBar(
           actions: actions,
           appBarTitle: 'Good Morning',
+          appBarHeight: 135,
           child: categories(),
         ),
         SliverList(
