@@ -20,9 +20,11 @@ class _NowPlayingState extends State<PlayerFullScreen> {
       height: MediaQuery.of(context).size.height,
       decoration: const BoxDecoration(
           gradient: LinearGradient(stops: [
-        0.2
+        0.1,
+        0.6
       ], colors: [
-        Color(0xFF0e1a26),
+        Color(0xFF07202B),
+        Color.fromARGB(255, 9, 26, 31),
       ], begin: Alignment.topCenter, end: Alignment.bottomCenter)),
       child: Scaffold(
         //backgroundColor: nowPlaying["playerColor"],

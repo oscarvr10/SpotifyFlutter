@@ -35,15 +35,14 @@ class _PlayerControlState extends State<PlayerControl> {
         child: GestureDetector(
           onTap: () => nowPlayingMethod(),
           child: AnimatedContainer(
-            duration: const Duration(milliseconds: 800),
-            curve: Curves.fastOutSlowIn,
+            duration: const Duration(milliseconds: 270),
+            curve: Curves.easeInOut,
             width: !showFullscreen ? size.width * 0.9 : size.width,
             height: !showFullscreen ? size.height * 0.07 : size.height,
             decoration: BoxDecoration(
-                color: const Color(0xFF0e1a26),
-                borderRadius: showFullscreen
-                    ? BorderRadius.circular(0)
-                    : BorderRadius.circular(10)),
+              color: const Color(0xFF070B10),
+              borderRadius: BorderRadius.circular(10),
+            ),
             child: showFullscreen
                 ? Offstage(
                     offstage: !offstage,

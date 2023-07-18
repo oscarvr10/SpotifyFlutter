@@ -57,12 +57,12 @@ class CustomBottomNavigationBar extends StatelessWidget {
           decoration: const BoxDecoration(
             gradient: LinearGradient(
               colors: [
-                Color.fromRGBO(18, 18, 18, 0.8),
+                Color.fromRGBO(18, 18, 18, 0.95),
                 Color.fromRGBO(18, 18, 18, 1.0),
               ],
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
-              stops: [0.0, 0.6],
+              stops: [0.0, 0.35],
             ),
           ),
           child: Theme(
