@@ -71,7 +71,7 @@ class HomeScreenState extends ConsumerState<HomeScreen>
                     headerText: 'Popular Artists',
                     artists: artists,
                   ),
-                  const SizedBox(height: 70),
+                  SizedBox(height: MediaQuery.of(context).size.height * 0.17),
                 ],
               );
             },

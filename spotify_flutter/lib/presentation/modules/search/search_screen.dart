@@ -70,6 +70,11 @@ class SearchScreenState extends ConsumerState<SearchScreen>
             },
             childCount: 1,
           ),
+        ),
+        SliverToBoxAdapter(
+          child: SizedBox(
+            height: MediaQuery.of(context).size.height * 0.1,
+          ),
         )
       ],
     );

@@ -42,6 +42,7 @@ class MyLibraryScreenState extends ConsumerState<MyLibraryScreen>
             appBarTitle: 'Your Library',
             showAvatar: true,
             appBarHeight: 135,
+            isFixed: true,
             child: categories(),
           ),
           SliverList(
@@ -87,7 +88,12 @@ class MyLibraryScreenState extends ConsumerState<MyLibraryScreen>
               },
               childCount: playlists.length,
             ),
-          )
+          ),
+          SliverToBoxAdapter(
+            child: SizedBox(
+              height: MediaQuery.of(context).size.height * 0.07,
+            ),
+          ),
         ],
       ),
     );

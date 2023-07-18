@@ -6,6 +6,7 @@ class CustomAppBar extends StatelessWidget {
   final String appBarTitle;
   final double appBarHeight;
   final bool showAvatar;
+  final bool isFixed;
 
   const CustomAppBar({
     super.key,
@@ -14,6 +15,7 @@ class CustomAppBar extends StatelessWidget {
     required this.appBarTitle,
     this.appBarHeight = 110,
     this.showAvatar = false,
+    this.isFixed = false,
   });
 
   @override
@@ -28,7 +30,7 @@ class CustomAppBar extends StatelessWidget {
       pinned: true,
       floating: true,
       expandedHeight: appBarHeight,
-      collapsedHeight: appBarHeight / 2.1,
+      collapsedHeight: isFixed ? appBarHeight : appBarHeight / 2.1,
       toolbarHeight: appBarHeight / 2.1,
       title: Container(
         padding: const EdgeInsets.only(top: 36.0),
