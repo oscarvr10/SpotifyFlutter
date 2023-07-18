@@ -48,14 +48,6 @@ class _BaseScreenState extends State<BaseScreen>
       );
     }
 
-    SystemChrome.setSystemUIOverlayStyle(
-      const SystemUiOverlayStyle(
-          statusBarColor: Colors.white,
-          statusBarBrightness:
-              Brightness.dark //or set color with: Color(0xFF0000FF)
-          ),
-    );
-
     return Scaffold(
       body: Stack(
         children: [
@@ -68,7 +60,7 @@ class _BaseScreenState extends State<BaseScreen>
           CustomBottomNavigationBar(currentIndex: widget.pageIndex),
         ],
       ),
-      backgroundColor: const Color.fromRGBO(18, 18, 18, 1.0),
+      backgroundColor: const Color(0xFF121212),
     );
   }
 
