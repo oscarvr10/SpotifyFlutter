@@ -38,9 +38,11 @@ class _NowPlayingState extends State<PlayerFullScreen> {
             },
             icon: const Icon(FluentIcons.chevron_down_20_regular),
           ),
-          title: const Text(
-            'X&Y',
-            style: TextStyle(fontSize: 14, color: Colors.white70),
+          title: const Center(
+            child: Text(
+              'X&Y',
+              style: TextStyle(fontSize: 14, color: Colors.white70),
+            ),
           ),
           actions: [
             IconButton(
