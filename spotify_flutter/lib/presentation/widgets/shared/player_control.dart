@@ -29,16 +29,16 @@ class _PlayerControlState extends State<PlayerControl> {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Positioned(
-        bottom: !showFullscreen ? 100 : 0,
+        bottom: !showFullscreen ? 90 : 0,
         left: !showFullscreen ? 10 : 0,
         right: !showFullscreen ? 10 : 0,
         child: GestureDetector(
           onTap: () => nowPlayingMethod(),
           child: AnimatedContainer(
-            duration: const Duration(milliseconds: 270),
+            duration: const Duration(milliseconds: 250),
             curve: Curves.easeInOut,
             width: !showFullscreen ? size.width * 0.9 : size.width,
-            height: !showFullscreen ? size.height * 0.07 : size.height,
+            height: !showFullscreen ? size.height * 0.08 : size.height,
             decoration: BoxDecoration(
               color: const Color(0xFF070B10),
               borderRadius: BorderRadius.circular(10),

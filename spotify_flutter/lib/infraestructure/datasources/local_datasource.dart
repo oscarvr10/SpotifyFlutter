@@ -11,7 +11,7 @@ import 'package:spotify_flutter/shared/data/spotify_data.dart';
 class LocalDataSource implements MockDataSource {
   @override
   Future<List<Album>> getAlbums() async {
-    await Future.delayed(const Duration(seconds: 2));
+    await Future.delayed(const Duration(seconds: 1));
     final List<Album> newAlbums = albums
         .map((album) => LocalAlbumModel.fromJson(album).toAlbumEntity())
         .toList();
@@ -21,7 +21,7 @@ class LocalDataSource implements MockDataSource {
 
   @override
   Future<List<Artist>> getArtists() async {
-    await Future.delayed(const Duration(seconds: 2));
+    await Future.delayed(const Duration(seconds: 1));
     final List<Artist> newArtists = artists
         .map((artist) => LocalArtistModel.fromJson(artist).toArtistEntity())
         .toList();
@@ -31,7 +31,7 @@ class LocalDataSource implements MockDataSource {
 
   @override
   Future<List<SearchCategory>> getSearchCategories() async {
-    await Future.delayed(const Duration(seconds: 2));
+    await Future.delayed(const Duration(seconds: 1));
     final List<SearchCategory> newCategories = searchCategories
         .map((category) => LocalSearchCategoryModel.fromJson(category)
             .toSearchCategoryEntity())
@@ -42,7 +42,7 @@ class LocalDataSource implements MockDataSource {
 
   @override
   Future<List<Playlist>> getPlaylists() async {
-    await Future.delayed(const Duration(seconds: 2));
+    await Future.delayed(const Duration(seconds: 1));
     final List<Playlist> newPlaylists = playlists
         .map((playlist) =>
             LocalPlaylistModel.fromJson(playlist).toPlaylistEntity())
@@ -53,7 +53,7 @@ class LocalDataSource implements MockDataSource {
 
   @override
   Future<List<Recent>> getRecents() async {
-    await Future.delayed(const Duration(seconds: 2));
+    await Future.delayed(const Duration(seconds: 1));
     final List<Recent> newRecents = recents
         .map((recent) => LocalRecentModel.fromJson(recent).toRecentEntity())
         .toList();
@@ -63,7 +63,7 @@ class LocalDataSource implements MockDataSource {
 
   @override
   Future<List<Song>> getSongs() async {
-    await Future.delayed(const Duration(seconds: 2));
+    await Future.delayed(const Duration(seconds: 1));
     final List<Song> newSongs = songs
         .map((song) => LocalSongModel.fromJson(song).toSongEntity())
         .toList();

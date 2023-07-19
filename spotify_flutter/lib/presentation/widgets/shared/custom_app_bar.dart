@@ -25,13 +25,13 @@ class CustomAppBar extends StatelessWidget {
 
     return SliverAppBar(
       foregroundColor: Colors.white,
-      backgroundColor: Colors.black,
+      backgroundColor: const Color(0xFF121212),
       centerTitle: false,
       pinned: true,
       floating: true,
       expandedHeight: appBarHeight,
-      collapsedHeight: isFixed ? appBarHeight : appBarHeight / 2.1,
-      toolbarHeight: appBarHeight / 2.1,
+      collapsedHeight: isFixed ? appBarHeight : appBarHeight / 2.11,
+      toolbarHeight: appBarHeight / 2.11,
       title: Container(
         padding: const EdgeInsets.only(top: 36.0),
         child: Row(

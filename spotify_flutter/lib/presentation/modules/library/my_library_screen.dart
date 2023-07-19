@@ -100,19 +100,22 @@ class MyLibraryScreenState extends ConsumerState<MyLibraryScreen>
   }
 
   Widget categories() {
-    return Container(
-      color: const Color.fromRGBO(18, 18, 18, 1.0),
-      padding: const EdgeInsets.symmetric(horizontal: 12.0),
-      child: const Row(
-        children: [
-          CustomChip(text: 'Playlist'),
-          SizedBox(width: 12.0),
-          CustomChip(text: 'Podcasts & Shows'),
-          SizedBox(width: 12.0),
-          CustomChip(text: 'Albums'),
-          SizedBox(width: 12.0),
-          CustomChip(text: 'Artists'),
-        ],
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      child: Container(
+        color: const Color.fromRGBO(18, 18, 18, 1.0),
+        padding: const EdgeInsets.symmetric(horizontal: 12.0),
+        child: const Row(
+          children: [
+            CustomChip(text: 'Playlist'),
+            SizedBox(width: 12.0),
+            CustomChip(text: 'Podcasts & Shows'),
+            SizedBox(width: 12.0),
+            CustomChip(text: 'Albums'),
+            SizedBox(width: 12.0),
+            CustomChip(text: 'Artists'),
+          ],
+        ),
       ),
     );
   }
